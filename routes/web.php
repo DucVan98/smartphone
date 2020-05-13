@@ -54,4 +54,33 @@ Route::post('/update-brand-product/{brand_id}','BrandProduct@update_brand_produc
 Route::get('/unactive-brand-product/{brand_id}','BrandProduct@unactive_brand_product');
 Route::get('/active-brand-product/{brand_id}','BrandProduct@active_brand_product');
 //end_brand_product
+//color product
+Route::get('/add-color-product','ColorController@add_color_product');
+Route::get('/all-color-product','ColorController@all_color_product');
+Route::post('/save-color-product','ColorController@save_color_product');
+
+Route::get('/edit-color-product/{color_product_id}','ColorController@edit_color_product');
+Route::get('/delete-color-product/{color_product_id}','ColorController@delete_color_product');
+Route::post('/update-color-product/{color_product_id}','ColorController@update_color_product');
+
+
+// tình trạng
+Route::get('/unactive-color-product/{color_product_id}','ColorController@unactive_color_product');
+Route::get('/active-color-product/{color_product_id}','ColorController@active_color_product');
+//end color product
+//memory
+Route::get('/add-memory-product','MemoryController@add_memory_product');
+Route::get('/all-memory-product','MemoryController@all_memory_product');
+Route::post('/save-memory-product','MemoryController@save_memory_product');
+
+Route::get('/edit-memory-product/{memory_product_id}','MemoryController@edit_memory_product');
+Route::get('/delete-memory-product/{memory_product_id}','MemoryController@delete_memory_product');
+Route::post('/update-memory-product/{memory_product_id}','MemoryController@update_memory_product');
+
+
+// tình trạng
+Route::get('/unactive-memory-product/{memory_product_id}','MemoryController@unactive_memory_product');
+Route::get('/active-memory-product/{memory_product_id}','MemoryController@active_memory_product');
+//end memory
+
 //endbackend

@@ -50,7 +50,7 @@
               }
                   ?>
             </span></td>
-            <td style="width: 60%;">{{ $cate_pro->category_desc }}</td>
+            <td style="width: 60%;">{!! $cate_pro->category_desc !!}</td>
             <td style="width: 10%;text-align: center">
               <a href="{{URL::to('/edit-category-product/'.$cate_pro->category_id )}}" class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-pencil-square-o text-success text-active"></i></a>
