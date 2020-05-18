@@ -3,7 +3,7 @@
 <div class="table-agile-info">
   <div class="panel panel-default">
     <div class="panel-heading">
-      Liệt kê thương hiệu
+      Tất cả màu sản phẩm
     </div>
     <?php 
       $message = Session::get('message');
@@ -25,36 +25,36 @@
                 <input type="checkbox"><i></i>
               </label>
             </th>
-            <th style="width: 20%;text-align: center;">Tên thương hiệu</th>
+            <th style="width: 20%;text-align: center;">Tên danh mục</th>
             <th style="width: 10%;text-align: center;">Hiển thị</th>
-            <th style="width: 60%;text-align: center;">Mô tả thương hiệu</th>
+            <th style="width: 60%;text-align: center;">Mô tả sản phẩm</th>
             <th style="width:30px;"></th>
           </tr>
         </thead>
         <tbody>
-          @foreach($all_brand_product as $key => $brand_pro)
+          @foreach($all_color_product as $key => $cate_pro)
           <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-            <td style="width: 20%;text-align: center;">{{ $brand_pro->brandy_name }}</td>
+            <td style="width: 20%;text-align: center;">{{ $cate_pro->color_name }}</td>
             <td style="width: 10%;text-align: center;"><span class="text-ellipsis">
               <?php
-              if($brand_pro->brand_status==0) {
+              if($cate_pro->color_status==0) {
                 ?>
-                <a href="{{URL::to('/active-brand-product/'.$brand_pro->brand_id)}}"><span class="fa-thums-styling fa fa-thumbs-up"></span></a>
+                <a href="{{URL::to('/active-color-product/'.$cate_pro->color_id)}}"><span class="fa-thums-styling fa fa-thumbs-up"></span></a>
                 <?php 
               }else{ 
                   ?>
               
-                <a href="{{URL::to('/unactive-brand-product/'.$brand_pro->brand_id )}}"><span class="fa-thums-styling fa fa-thumbs-down"></span></a>
+                <a href="{{URL::to('/unactive-color-product/'.$cate_pro->color_id )}}"><span class="fa-thums-styling fa fa-thumbs-down"></span></a>
                 <?php
               }
                   ?>
             </span></td>
-            <td style="width: 60%;">{!! $brand_pro->brand_desc !!}</td>
+            <td style="width: 60%;">{!! $cate_pro->color_desc !!}</td>
             <td style="width: 10%;text-align: center">
-              <a href="{{URL::to('/edit-brand-product/'.$brand_pro->brand_id )}}" class="active styling-edit" ui-toggle-class="">
+              <a href="{{URL::to('/edit-color-product/'.$cate_pro->color_id )}}" class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-pencil-square-o text-success text-active"></i></a>
-              <a  onclick="return confirm('Are you sure you want to delete this item?');" href="{{URL::to('/delete-brand-product/'.$brand_pro->brand_id )}}" class="active styling-edit" ui-toggle-class="">
+              <a  onclick="return confirm('Are you sure you want to delete this item?');" href="{{URL::to('/delete-color-product/'.$cate_pro->color_id )}}" class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-times text-danger text"></i></a>
             </td>
           </tr>

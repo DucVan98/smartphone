@@ -25,36 +25,47 @@
                 <input type="checkbox"><i></i>
               </label>
             </th>
-            <th style="width: 20%;text-align: center;">Tên thương hiệu</th>
-            <th style="width: 10%;text-align: center;">Hiển thị</th>
-            <th style="width: 60%;text-align: center;">Mô tả thương hiệu</th>
-            <th style="width:30px;"></th>
+            <th style="text-align: center;">tên sản phẩm</th>
+            <th style="text-align: center;">hình ảnh</th>
+            <th style="text-align: center;">số lượng</th>
+            <th style="text-align: center;">giá bán</th>
+            <th style="text-align: center;">danh mục</th>
+            <th style="text-align: center;">thương hiệu</th>
+            <th style="text-align: center;">Hiển thị</th>
+            <th style="text-align: center;">Màu sắc</th>
+            <th style="text-align: center;">Dung lượng</th>
+            <th style=""></th>
           </tr>
         </thead>
         <tbody>
-          @foreach($all_brand_product as $key => $brand_pro)
+          @foreach($all_product as $key => $pro)
           <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-            <td style="width: 20%;text-align: center;">{{ $brand_pro->brandy_name }}</td>
-            <td style="width: 10%;text-align: center;"><span class="text-ellipsis">
+            <td>{{ $pro->product_name }}</td>
+            <td><img src="public/uploat/product/{{ $pro->product_image }}" height="100" width="100"></td>
+            <td>{{ $pro->product_amount }}</td>
+            <td>{{ $pro->product_price }}</td>
+            <td>{{ $pro->category_name }}</td>
+            <td>{{ $pro->brand_name }}</td>
+            <td>{{ $pro->color_name }}</td>
+            <td>{{ $pro->memory_name }}</td>
+            <td><span class="text-ellipsis">
               <?php
-              if($brand_pro->brand_status==0) {
+              if($pro->product_status==0) {
                 ?>
-                <a href="{{URL::to('/active-brand-product/'.$brand_pro->brand_id)}}"><span class="fa-thums-styling fa fa-thumbs-up"></span></a>
+                <a href="{{URL::to('/active-product/'.$pro->prudct_id)}}"><span class="fa-thums-styling fa fa-thumbs-up"></span></a>
                 <?php 
               }else{ 
                   ?>
-              
-                <a href="{{URL::to('/unactive-brand-product/'.$brand_pro->brand_id )}}"><span class="fa-thums-styling fa fa-thumbs-down"></span></a>
+                <a href="{{URL::to('/unactive-product/'.$pro->prudct_id )}}"><span class="fa-thums-styling fa fa-thumbs-down"></span></a>
                 <?php
               }
                   ?>
             </span></td>
-            <td style="width: 60%;">{!! $brand_pro->brand_desc !!}</td>
-            <td style="width: 10%;text-align: center">
-              <a href="{{URL::to('/edit-brand-product/'.$brand_pro->brand_id )}}" class="active styling-edit" ui-toggle-class="">
+            <td>
+              <a href="{{URL::to('/edit-product/'.$pro->prudct_id )}}" class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-pencil-square-o text-success text-active"></i></a>
-              <a  onclick="return confirm('Are you sure you want to delete this item?');" href="{{URL::to('/delete-brand-product/'.$brand_pro->brand_id )}}" class="active styling-edit" ui-toggle-class="">
+              <a  onclick="return confirm('Are you sure you want to delete this item?');" href="{{URL::to('/delete-product/'.$pro->prudct_id )}}" class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-times text-danger text"></i></a>
             </td>
           </tr>

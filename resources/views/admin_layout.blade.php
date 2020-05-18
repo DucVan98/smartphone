@@ -68,7 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu extended logout">
-                <li><a href="#"><i class=" fa fa-suitcase"></i>Thông tin</a></li>
+                <li><a href="{{URL::to('/profile')}}"><i class=" fa fa-suitcase"></i>Thông tin</a></li>
                 <li><a href="#"><i class="fa fa-cog"></i> Cài đặt</a></li>
                 <li><a href="{{URL::to('/logout')}}"><i class="fa fa-key"></i>Đăng xuất</a></li>
             </ul>
@@ -119,6 +119,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <ul class="sub">
 						<li><a href="{{URL::to('/add-brand-product')}}">Thêm thương hiệu sản phẩm</a></li>
 						<li><a href="{{URL::to('/all-brand-product')}}">Hiển thị thương hiệu sản phẩm</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-book"></i>
+                        <span>Bộ nhớ sản phẩm</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="{{URL::to('/add-memory-product')}}">Thêm bộ nhớ sản phẩm</a></li>
+                        <li><a href="{{URL::to('/all-memory-product')}}">Hiển thị bộ nhớ sản phẩm</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-book"></i>
+                        <span>màu sắc của sản phẩm</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="{{URL::to('/add-color-product')}}">thêm màu sắc của sản phẩm</a></li>
+                        <li><a href="{{URL::to('/all-color-product')}}">hiển thị màu sắc của sản phẩm</a></li>
                     </ul>
                 </li>
                 <li class="sub-menu">

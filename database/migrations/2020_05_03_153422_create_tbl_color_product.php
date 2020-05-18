@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTblBrandProduct extends Migration
+class CreateTblColorProduct extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateTblBrandProduct extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_brand_product', function (Blueprint $table) {
-           $table->increments('brand_id');
-            $table->string('brand_name');
-            $table->text('brand_desc');
-            $table->integer('brand_status');
+        Schema::create('tbl_color_product', function (Blueprint $table) {
+           $table->increments('color_id');
+            $table->string('color_name');
+            $table->text('color_desc');
+            $table->integer('color_status');
+
         });
     }
 
@@ -28,6 +29,6 @@ class CreateTblBrandProduct extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_brand_product');
+        Schema::dropIfExists('tbl_color_product');
     }
 }
