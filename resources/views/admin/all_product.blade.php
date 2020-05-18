@@ -5,18 +5,18 @@
     <div class="panel-heading">
       Liệt kê thương hiệu
     </div>
-    <?php 
-      $message = Session::get('message');
-      if($message){
-        echo '<span class="text-alight">'.$message.'</span>';
-        Session::put('message',null);
-        }
-      ?>
+    <?php
+    $message = Session::get('message');
+    if ($message) {
+      echo '<span class="text-alight">' . $message . '</span>';
+      Session::put('message', null);
+    }
+    ?>
     <div class="row w3-res-tb">
       <div class="col-sm-4">
       </div>
     </div>
-    <div class="table-responsive">
+    <div class="table-responsive" style="text-transform: lowercase">
       <table class="table table-striped b-t b-light">
         <thead>
           <tr>
@@ -25,12 +25,12 @@
                 <input type="checkbox"><i></i>
               </label>
             </th>
-            <th style="text-align: center;">tên sản phẩm</th>
-            <th style="text-align: center;">hình ảnh</th>
-            <th style="text-align: center;">số lượng</th>
-            <th style="text-align: center;">giá bán</th>
-            <th style="text-align: center;">danh mục</th>
-            <th style="text-align: center;">thương hiệu</th>
+            <th style="text-align: center;">Tên sản phẩm</th>
+            <th style="text-align: center;">Hình ảnh</th>
+            <th style="text-align: center;">Số lượng</th>
+            <th style="text-align: center;">Giá bán</th>
+            <th style="text-align: center;">Danh mục</th>
+            <th style="text-align: center;">Thương hiệu</th>
             <th style="text-align: center;">Hiển thị</th>
             <th style="text-align: center;">Màu sắc</th>
             <th style="text-align: center;">Dung lượng</th>
@@ -50,22 +50,22 @@
             <td>{{ $pro->color_name }}</td>
             <td>{{ $pro->memory_name }}</td>
             <td><span class="text-ellipsis">
-              <?php
-              if($pro->product_status==0) {
-                ?>
-                <a href="{{URL::to('/active-product/'.$pro->prudct_id)}}"><span class="fa-thums-styling fa fa-thumbs-up"></span></a>
-                <?php 
-              }else{ 
-                  ?>
-                <a href="{{URL::to('/unactive-product/'.$pro->prudct_id )}}"><span class="fa-thums-styling fa fa-thumbs-down"></span></a>
                 <?php
-              }
-                  ?>
-            </span></td>
+                if ($pro->product_status == 0) {
+                ?>
+                  <a href="{{URL::to('/active-product/'.$pro->prudct_id)}}"><span class="fa-thums-styling fa fa-thumbs-up"></span></a>
+                <?php
+                } else {
+                ?>
+                  <a href="{{URL::to('/unactive-product/'.$pro->prudct_id )}}"><span class="fa-thums-styling fa fa-thumbs-down"></span></a>
+                <?php
+                }
+                ?>
+              </span></td>
             <td>
               <a href="{{URL::to('/edit-product/'.$pro->prudct_id )}}" class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-pencil-square-o text-success text-active"></i></a>
-              <a  onclick="return confirm('Are you sure you want to delete this item?');" href="{{URL::to('/delete-product/'.$pro->prudct_id )}}" class="active styling-edit" ui-toggle-class="">
+              <a onclick="return confirm('Are you sure you want to delete this item?');" href="{{URL::to('/delete-product/'.$pro->prudct_id )}}" class="active styling-edit" ui-toggle-class="">
                 <i class="fa fa-times text-danger text"></i></a>
             </td>
           </tr>
@@ -75,11 +75,11 @@
     </div>
     <footer class="panel-footer">
       <div class="row">
-        
+
         <div class="col-sm-5 text-center">
           <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
         </div>
-        <div class="col-sm-7 text-right text-center-xs">                
+        <div class="col-sm-7 text-right text-center-xs">
           <ul class="pagination pagination-sm m-t-none m-b-none">
             <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
             <li><a href="">1</a></li>
